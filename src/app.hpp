@@ -29,7 +29,7 @@ namespace lve {
 		void createCommandBuffers();
 		void drawFrame();
 
-		LveWindow lveWindow{ WIDTH, HEIGHT, "Hello Vulkan!" };
+		LveWindow lveWindow{ WIDTH, HEIGHT, "Lexon Engine" };
 		LveDevice lveDevice{ lveWindow };
 		LveSwapChain lveSwapChain{ lveDevice, lveWindow.getExtent() };
 		std::unique_ptr<LvePipeline> lvePipeline;

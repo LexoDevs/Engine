@@ -10,7 +10,7 @@ int main() {
 
     std::cout << "Cargando shaders:";
 
-    system("C:/dev/Lexon/Lexon/shaders/compile.bat");
+    system("C:/dev/Lexon2/Lexon/Engine/shaders/compile.bat");
 
     lve::FirstApp app{};
 
