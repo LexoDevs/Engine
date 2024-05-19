@@ -20,6 +20,8 @@ namespace lve {
         while (!lveWindow.shouldClose()) {
             glfwPollEvents();
             drawFrame();
+
+            
         }
 
         vkDeviceWaitIdle(lveDevice.device());
@@ -70,6 +72,7 @@ namespace lve {
         for (int i = 0; i < commandBuffers.size(); i++) {
             VkCommandBufferBeginInfo beginInfo{};
             beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+            beginInfo.flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT;
 
             if (vkBeginCommandBuffer(commandBuffers[i], &beginInfo) != VK_SUCCESS) {
                 throw std::runtime_error("failed to begin recording command buffer!");
